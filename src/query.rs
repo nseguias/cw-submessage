@@ -1,8 +1,8 @@
 use cosmwasm_std::{Deps, StdResult};
 
-use crate::{msg::GetCountResponse, state::STATE};
+use crate::{msg::GetAdminResponse, state::STATE};
 
-pub fn count(deps: Deps) -> StdResult<GetCountResponse> {
+pub fn get_admin(deps: Deps) -> StdResult<GetAdminResponse> {
     let state = STATE.load(deps.storage)?;
-    Ok(GetCountResponse { count: state.count })
+    Ok(GetAdminResponse { admin: state.admin })
 }
